@@ -8,6 +8,7 @@ const $horas = document.getElementById('hours')
 const $minutos = document.getElementById('minutes')
 const $segundos = document.getElementById('seconds')
 const $start = document.getElementById('start')
+const $clear = document.getElementById('clear')
 
 function dateDiff (start, end) {
     const diff = end - start > 0 ? end - start : 0
@@ -54,6 +55,17 @@ $start.addEventListener('click', function(e){
     $modal.style.display = 'block'
 })
 
+$clear.addEventListener('click', function (e) {
+  e.preventDefault()
+  clearInterval(interval)
+  localStorage.removeItem('timer')
+  localStorage.removeItem('title')
+  $modal.style.display = 'none'
+  $form.reset()
+})
+
+
+
   const ls = localStorage.getItem('title')
   if(ls){
   const title = JSON.parse(ls)
@@ -98,6 +110,8 @@ if(time){
 
   
 }
+
+
 
   
 
