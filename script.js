@@ -60,8 +60,10 @@ $clear.addEventListener('click', function (e) {
   clearInterval(interval)
   localStorage.removeItem('timer')
   localStorage.removeItem('title')
+  localStorage.clear()
   $modal.style.display = 'none'
   $form.reset()
+
 })
 
 
