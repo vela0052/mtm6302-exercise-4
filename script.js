@@ -57,7 +57,7 @@ $start.addEventListener('click', function(e){
 
 $clear.addEventListener('click', function (e) {
   e.preventDefault()
-  clearInterval(interval)
+  clearInterval()
   localStorage.removeItem('timer')
   localStorage.removeItem('title')
   localStorage.clear()
