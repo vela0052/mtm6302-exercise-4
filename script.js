@@ -35,13 +35,14 @@ function setCountdown(selectDate){
     $horas.textContent = diff.hours
     $minutos.textContent = diff.minutes
     $segundos.textContent = diff.seconds
-    localStorage.setItem('timer', nextTime)
+    
     
 
 
   }, 1000)
 
 }
+
   // current date and time
   
 $start.addEventListener('click', function(e){
@@ -49,10 +50,14 @@ $start.addEventListener('click', function(e){
     $mtitle.textContent = $title.value
     const title = $title.value
     setCountdown()
-    localStorage.setItem('title', JSON.stringify(title) )
+    localStorage.setItem('title', JSON.stringify(title))
     //console.log(selectDate)
     dateDiff()
     $modal.style.display = 'block'
+    const selectDate =$endDate.value
+    const nextTime = new Date(selectDate)
+    localStorage.setItem('timer', nextTime)
+
 })
 
 $clear.addEventListener('click', function (e) {
@@ -91,7 +96,7 @@ if(time){
     const now = new Date()
     
     const diff = dateDiff(now,timer)
-    console.log(diff)
+    //console.log(diff)
     //console.log(time)
   
   
